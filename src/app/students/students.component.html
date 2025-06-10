@@ -1,4 +1,9 @@
-<div class="button-add-etudiant"><h3>Etudiants</h3><button class="add-student">+ Ajouter un étudiant</button></div>
+<div class="button-add-etudiant">
+  <h3>Etudiants</h3>
+  @if (userRole == "admin"){
+    <button class="add-student">+ Ajouter un étudiant</button>
+  }
+</div>
 <div class="content-student-list">
   <ul>
     @for (student of students; track student.id){
@@ -8,10 +13,12 @@
           <span>{{student.firstName}}</span>
           <span>{{student.lastName}}</span>
         </div>
-        <div>
-          <span class="delete" (click)="deleteStudent(student.id)"><i class="fas fa-trash-alt"></i></span>
-          <span class="edit"><i class="far fa-edit"></i></span>
-        </div>
+        @if (userRole == "admin"){
+          <div>
+            <span class="delete" (click)="deleteStudent(student.id)"><i class="fas fa-trash-alt"></i></span>
+            <span class="edit"><i class="far fa-edit"></i></span>
+          </div>
+        }
       </li>
     }
   </ul>

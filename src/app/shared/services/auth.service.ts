@@ -29,7 +29,7 @@ export class AuthService {
   }
 
   logout(){
-    this.tokenService.signOut()
     this.isLogged$.next(false)
+    this.tokenService.signOut()
   }
 }

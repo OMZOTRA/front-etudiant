@@ -1,6 +1,7 @@
 import {Component, inject, Input, OnInit} from '@angular/core';
 import {StudentsService} from '../shared/services/students.service';
 import {mergeMap, tap} from 'rxjs';
+import {TokenStorageService} from '../shared/services/token-storage.service';
 
 @Component({
   selector: 'app-students',
@@ -10,6 +11,8 @@ import {mergeMap, tap} from 'rxjs';
 })
 export class StudentsComponent {
   @Input() students!: any;
+  tokenService = inject(TokenStorageService)
+  userRole = this.tokenService.getUserRole()
   studentsServices = inject(StudentsService)
 
   deleteStudent(idStudent: number) {
