@@ -1,13 +1,13 @@
 import {Component, inject, Input, OnInit} from '@angular/core';
 import {DashboardComponent} from '../dashboard/dashboard.component';
-import {StudentsComponent} from '../students/students.component';
 import {StudentsService} from '../shared/services/students.service';
+import {RouterOutlet} from '@angular/router';
 
 @Component({
   selector: 'app-home',
   imports: [
     DashboardComponent,
-    StudentsComponent
+    RouterOutlet
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'

@@ -7,7 +7,8 @@ import {TokenStorageService} from '../services/token-storage.service';
 @Component({
   selector: 'app-header',
   imports: [
-    AsyncPipe
+    AsyncPipe,
+    RouterLink
   ],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
@@ -18,6 +19,7 @@ export class HeaderComponent implements OnInit{
   isLogged$= this.authService.isLogged$.asObservable()
 
   ngOnInit() {
+
   }
 
   deconnexion(){

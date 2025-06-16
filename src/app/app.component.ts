@@ -1,10 +1,7 @@
-import {Component, inject, OnInit} from '@angular/core';
-import {RouterLink, RouterOutlet} from '@angular/router';
-import {StudentsComponent} from './students/students.component';
-import {DashboardComponent} from './dashboard/dashboard.component';
+import {Component,} from '@angular/core';
+import {RouterOutlet} from '@angular/router';
 import {HeaderComponent} from './shared/header/header.component';
-import {TokenStorageService} from './shared/services/token-storage.service';
-import {AuthService} from './shared/services/auth.service';
+;
 
 @Component({
   selector: 'app-root',
